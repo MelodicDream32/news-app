@@ -39,7 +39,7 @@
         <div class="img__section">
           <div class="img__container">
             <div class="img-border">
-              <img src="{{ article.urlToImage }}" alt="{{ article.title }}" onError="this.src='https://www.showwp.com/wp-content/uploads/2016/02/404_page_template_03.jpg';">
+              <img src="{{ article.urlToImage }}" alt="{{ article.title }}" onError="this.src='https://www.showwp.com/wp-content/uploads/2016/02/404_page_template_03.jpg';" class="mat-elevation-z10">
             </div>
           </div>
 
@@ -51,7 +51,47 @@
         <div class="card__section">
           <div class="card__container">
             <!-- Card goes here -->
+              <mat-card class="card__item mat-card mat-elevation-z10">
+                <mat-card-header>
+                  <div class="row__container">
+                    <div class="top-row">
+                      <div class="source-logo">
+                        <img src="./assets/img/logos/{{article.source.id}}(full).png" alt="{{ article.source.name }}">
+                      </div>
+                      <div class="spacer"></div>
+                      <div class="share__btn">
+                        <button mat-icon-button>
+                          <mat-icon>share</mat-icon>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="mid-row">
+                      <div class="article-title"> {{ article.title }} </div>
+                    </div>
+                    <div class="bottom-row">
+                      <div class="spacer"></div>
+                      <div class="article-publish-date">
+                        {{ article.publishedAt | date }}
+                      </div>
+                    </div>
+                  </div>
+
+                </mat-card-header>
               
+
+              </mat-card>
+              <!-- <mat-card>
+                <mat-card-header>
+                  <mat-card-title>title</mat-card-title>
+                  <mat-card-subtitle>subtitle</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button>Ok</button>
+                </mat-card-actions>
+              </mat-card> -->
           </div>
         </div>
       </div>

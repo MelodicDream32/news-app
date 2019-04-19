@@ -18,7 +18,7 @@ export class MainNewsComponent implements OnInit {
   ngOnInit(){
     // Loads Articles
     this.newsapi.initArticles().subscribe(data => this.Articles = data['articles']);
-
+    
     // Load News Sources
     this.newsapi.initSources().subscribe(data => this.Sources = data['sources']);
   }
