@@ -1,0 +1,61 @@
+<mat-sidenav-container fullscreen>
+<mat-sidenav #sidenav class="mat-elevation-z4" mode="side">
+    <mat-list class="list-nav">
+        <mat-list-item class="list-item" *ngFor="let source of Sources" (click)="searchArticles(source.id);sidenav.close();">
+
+          <div mat-card-avatar [style.background-image]="'url(./assets/img/logos/' + source.id + '.png)'" class="header-image"></div>
+
+          <span class="source-name"> {{source.name}}</span>
+
+        </mat-list-item>
+    </mat-list>
+</mat-sidenav>
+
+<mat-toolbar class="toolbar__container">
+    <button mat-button (click)="sidenav.toggle ()">
+      
+        <mat-icon>menu</mat-icon>
+    </button>
+  
+    <span>News Concept | Rafiq Codes</span>
+  
+    <span class="spacer"></span>
+  
+    <button mat-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>settings</mat-icon>
+    </button>
+</mat-toolbar>
+  
+  <mat-menu #appMenu="matMenu">
+    <button mat-menu-item> Settings </button>
+    <button mat-menu-item> Help </button>
+  </mat-menu>
+ 
+
+<div class="container">
+  <main>
+    <cdk-virtual-scroll-viewport itemSize="986">
+      <div class="article__container" *cdkVirtualFor="let article of Articles">
+        <div class="img__section">
+          <div class="img__container">
+            <div class="img-border">
+              <img src="{{ article.urlToImage }}" alt="{{ article.title }}" onError="this.src='https://www.showwp.com/wp-content/uploads/2016/02/404_page_template_03.jpg';">
+            </div>
+          </div>
+
+          <div class="blur" [style.background-image]="'url(' + article.urlToImage + ')'"></div>
+
+          <div class="gradient-fade"></div>
+        </div>
+
+        <div class="card__section">
+          <div class="card__container">
+            <!-- Card goes here -->
+              
+          </div>
+        </div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </main>
+</div>  
+</mat-sidenav-container>

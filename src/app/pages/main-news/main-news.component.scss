@@ -1,0 +1,145 @@
+.toolbar__container > * {
+    margin: 0 15px;
+}
+.list-item{
+    
+    &:hover {
+        cursor: pointer;
+        background-color: #3f51b5;
+        color: white;
+    }
+
+    .header-image{
+        height: 40px;
+        width: 40px;
+        background-position: center;
+        background-size: contain;
+        border-radius: 30px;
+        margin: 0 15px;
+    }
+}
+
+cdk-virtual-scroll-viewport {
+    min-height: 93.6vh;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    list-style: none;
+    flex-direction: column;
+
+    &::-webkit-scrollbar{
+        width: 4px;
+    }
+    &::-webkit-scrollbar-track{
+        box-shadow: inset 0 0 15px #0078ff;
+        -webkit-box-shadow: inset 0 0 15px #0078ff;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #f5f5f5;
+        border-radius: 20px;
+    } 
+}
+
+main {
+    // background-color: #3f51b5;
+    .article__container{
+        min-height: 98vh;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        .img__section{
+            display: flex;
+            width: 65%;
+            overflow: hidden;
+
+            .blur {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                filter: blur(10px);
+                -webkit-filter: blur(10px);
+                transform: scale(1.1);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .img__container {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                .img-border {
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    overflow: hidden;
+                    height: 80%;
+                    width: 80%;
+                    border-radius: 10px;
+                    padding: 15px;
+                    position: relative;
+                    img {
+                      transition: all 1s;
+                      align-self: center;
+                      height: auto;
+                      width: auto;
+                      max-width: 100%;
+                      max-height: 100%;
+                      z-index: 20;
+                      border-radius: 10px;
+                    }
+                }
+            }
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gradient-fade {
+            background: rgba(245,245,245,0);
+            background: -moz-linear-gradient(left, rgba(245,245,245,0) 0%, rgba(245,245,245,0.28) 28%, rgba(0,120,255,1) 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(245,245,245,0)), color-stop(28%, rgba(245,245,245,0.28)), color-stop(100%, rgba(0,120,255,1)));
+            background: -webkit-linear-gradient(left, rgba(245,245,245,0) 0%, rgba(245,245,245,0.28) 28%, rgba(0,120,255,1) 100%);
+            background: -o-linear-gradient(left, rgba(245,245,245,0) 0%, rgba(245,245,245,0.28) 28%, rgba(0,120,255,1) 100%);
+            background: -ms-linear-gradient(left, rgba(245,245,245,0) 0%, rgba(245,245,245,0.28) 28%, rgba(0,120,255,1) 100%);
+            background: linear-gradient(to right, rgba(245,245,245,0) 0%, rgba(245,245,245,0.28) 28%, rgba(0,120,255,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#0078ff', GradientType=1 );
+            position: absolute;
+            width: 30vw;
+            height: 100%;
+            right: 0px;
+        }
+
+        .card__section {
+
+            flex-grow: 1;
+            height: 100vh;
+            .card__container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                position: relative;
+                padding: 30px;
+                .mat-card {
+
+                }
+                mat-card {
+                    max-height: 500px;
+                    height: auto;
+                    max-width: 550px;
+                    overflow: hidden;
+                    // mat-card-header{}
+                    mat-card-content{
+                        background-color: #f5f5f5;
+                        padding: 15px;
+    
+                    }
+                }
+            }
+        }
+    }
+}
