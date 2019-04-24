@@ -17,7 +17,8 @@
         <mat-icon>menu</mat-icon>
     </button>
   
-    <span>News Concept | Rafiq Codes</span>
+    <span class="desktop-title">News Concept | Rafiq Codes</span>
+    <span class="mobile-title">News Concept</span>
   
     <span class="spacer"></span>
   
@@ -39,11 +40,11 @@
         <div class="img__section">
           <div class="img__container">
             <div class="img-border">
-              <img src="{{ article.urlToImage }}" alt="{{ article.title }}" onError="this.src='https://www.showwp.com/wp-content/uploads/2016/02/404_page_template_03.jpg';" class="mat-elevation-z10">
+              <img src="{{ article.urlToImage }}" alt="{{ article.title }}" onError="this.src='https://www.showwp.com/wp-content/uploads/2016/02/404_page_template_03.jpg';" loading="lazy" class="mat-elevation-z5 animated fadeInLeft">
             </div>
           </div>
 
-          <div class="blur" [style.background-image]="'url(' + article.urlToImage + ')'"></div>
+          <div class="blur animated fadeIn" [style.background-image]="'url(' + article.urlToImage + ')'"></div>
 
           <div class="gradient-fade"></div>
         </div>
@@ -51,12 +52,12 @@
         <div class="card__section">
           <div class="card__container">
             <!-- Card goes here -->
-              <mat-card class="card__item mat-card mat-elevation-z10">
-                <mat-card-header>
+              <mat-card class="card__item mat-card mat-elevation-z10 animated fadeInRight">
+                <mat-card-header class="mat-elevation-z5">
                   <div class="row__container">
                     <div class="top-row">
                       <div class="source-logo">
-                        <img src="./assets/img/logos/{{article.source.id}}(full).png" alt="{{ article.source.name }}">
+                        <img src="./assets/img/logos/{{article.source.id}}(full).png" loading="lazy" alt="{{ article.source.name }}">
                       </div>
                       <div class="spacer"></div>
                       <div class="share__btn">
@@ -78,8 +79,20 @@
                       </div>
                     </div>
                   </div>
-
                 </mat-card-header>
+                <mat-card-content>
+                  <div class="row__container">
+                    <div class="top-row">
+                      <div class="article-description">
+                        {{article.description}}
+                      </div>
+                    </div>
+                    <div class="bottom-row">
+                      <button mat-button>Read More</button>
+                      <div class="gradient-fade"></div>
+                    </div>
+                  </div>
+                </mat-card-content>
               
 
               </mat-card>
