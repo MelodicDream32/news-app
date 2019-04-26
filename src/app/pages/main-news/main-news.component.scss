@@ -317,9 +317,8 @@ main {
 @media only screen and (max-width: 599px){
 // Articles Stylings
     .article__container {
-        .img__section {
-
-        }
+        // .img__section {
+        // }
         .card__section {
             .card__container{
                 padding: 0 !important;
@@ -388,7 +387,7 @@ main {
                             }
                         }
                     }
-                    mat-card-content{}
+                    // mat-card-content{}
                 }
             }
         }
