@@ -387,7 +387,9 @@ main {
                             }
                         }
                     }
-                    // mat-card-content{}
+                    mat-card-content{
+                        min-width: 80% !important;
+                    }
                 }
             }
         }
