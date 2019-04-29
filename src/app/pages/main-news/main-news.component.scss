@@ -70,7 +70,7 @@ main {
         position: relative;
         overflow: hidden;
         scroll-snap-align: center;
-        scroll-snap-stop: always;
+        // scroll-snap-stop: ;
         
         .img__section{
             display: flex;
@@ -225,6 +225,7 @@ main {
                         background-color: #f5f5f5;
                         padding: 15px;
                         position: relative;
+                        min-width: 380px;
                         // min-width: 802px;
 
                         & > * {
@@ -317,8 +318,7 @@ main {
 @media only screen and (max-width: 599px){
 // Articles Stylings
     .article__container {
-        // .img__section {
-        // }
+
         .card__section {
             .card__container{
                 padding: 0 !important;
